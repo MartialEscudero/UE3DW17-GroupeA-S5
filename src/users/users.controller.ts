@@ -18,13 +18,13 @@ export class UsersController {
         return this.usersService.findAll();
     }
 
-    @Get(':id')
+    @Get('user/:id')
     findOne(@Param('id') id: string) {
         return this.usersService.findOne(id);
     }
 
-    @Delete(':id')
-    removeUser(@Param('id') id: string) {
+    @Delete('deleteuser')
+    removeUser(@Body('id') id: string) {
         return this.usersService.removeUser(id);
     }
 
